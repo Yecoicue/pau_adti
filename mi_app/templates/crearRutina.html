@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block titulo %}Crear Rutina{% endblock %}
+{% block seccion %}Nueva Rutina{% endblock %}
+{% block contenido %}
+
+
+<form method="post">
+{% csrf_token %}
+<div class="form-group">
+  <label for="id_name">Nombre:</label>
+  <input type="text" name="name" class="form-control" required>
+</div>
+<div class="form-group">
+  <label for="id_description">Descripción:</label>
+  <textarea name="description" class="form-control" required></textarea>
+</div>
+<div class="form-group">
+  <label for="id_duration">Duración (minutos):</label>
+  <input type="number" name="duration" class="form-control" required>
+</div>
+<button type="submit" class="btn btn-primary">Crear rutina</button>
+</form>
+
+
+{% endblock %}
+

@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block titulo %}Inicio{% endblock %}
+{% block seccion %}Inicio{% endblock %}
+{% block contenido %}
+	
+<div class="container">
+		<section>
+			<h2>Descripción de la aplicación</h2>
+			<p>Aquí puedes escribir una breve descripción de tu aplicación de pausas activas, explicando los beneficios que ofrece a los usuarios.</p>
+		</section>
+		<section>
+			<h2>Iniciar sesión o registrarse</h2>
+			<p>Si ya tienes una cuenta, puedes iniciar sesión en la aplicación aquí:</p>
+		
+			<form method="post" action="{% url 'inicioSesion' %}">
+				{% csrf_token %}
+				<button type="submit" value="Inicio inicioSesion" class="btn btn-primary">Inicio Sesion</button>
+					
+			</form>
+			<form method="post" action="{% url 'registro' %}">
+				{% csrf_token %}
+			<p>Si aún no tienes una cuenta, puedes registrarte aquí:</p>
+			<button type="submit" value="Registro" class="btn btn-primary">Registrarse</button>
+				
+			</form>
+		</section>
+	</div>
+{% endblock %}
+

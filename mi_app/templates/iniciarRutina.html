@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block titulo %}seguir rutina {% endblock %}
+{% block seccion %}Seguir Rutinas{% endblock %}
+{% block contenido %}
+
+  <h2>{{ routine.name }}</h2>
+  <p>{{ routine.description }}</p>
+  <div class="timer">
+    <p>Tiempo restante: <span id="countdown">{{ routine.duration }}</span> minutos</p>
+  </div>
+  <div class="instructions">
+    <h3>Instrucciones</h3>
+    <ol>
+      {% for activity in routine.activities %}
+        <li>{{ activity.description }}</li>
+      {% endfor %}
+    </ol>
+  </div>
+  <script>
+    var countdown = document.getElementById("countdown");
+    var timer = setInterval(function() {
+      var timeLeft = parseInt(countdown.innerHTML) - 1;
+      if (timeLeft == 0) {
+        clearInterval(timer);
+        alert("¡Terminó la pausa activa!");
+        
+      } else {
+        countdown.innerHTML = timeLeft;
+      }
+    }, 60000);
+  </script>
+{% endblock %}
+
+ 

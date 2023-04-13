@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block titulo %}seguir rutina {% endblock %}
+{% block seccion %}Seguir Rutinas{% endblock %}
+{% block contenido %}
+
+<h1>Seguimiento de Rutina</h1>
+  {% if rutinas %}
+    <table>
+      <thead>
+        <tr>
+          <th>Rutina</th>
+          <th>Duración</th>
+          <th>Fecha de Completado</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for rutina in rutinas %}
+          <tr>
+            <td>{{ rutina.nombre }}</td>
+            <td>{{ rutina.duracion }} minutos</td>
+            <td>{{ rutina.fecha_completado|date:"d/m/Y" }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <p>No has completado ninguna rutina todavía.</p>
+  {% endif %}
+
+
+{% endblock %}

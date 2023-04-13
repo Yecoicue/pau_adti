@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block titulo %}Dashboard{% endblock %}
+{% block seccion %}Gestion Rutinas{% endblock %}
+{% block contenido %}
+
+<h1>Rutinas</h1>
+
+<a href="{% url 'crearRutina'%}" value="crearRutina" class="btn btn-primary">Crear Rutina</a>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Descripcion</th>
+          <th>Duracion</th>
+          <th>Accion</th>
+        </tr>
+      </thead>
+      <tbody>
+       
+        <tr>
+            <td>pausas 1</td>
+            <td> realizar estiramiento de manos </td>
+            <td>10 minutos</td>
+            <td>Iniciar/Seguir</td>
+          </tr>
+          <!-- 
+          <tr>
+            <td>{{ rutina.nombre }}</td>
+            <td>{{ rutina.descripcion }} </td>
+            <td>{{ rutina.duracion}} minutos</td>
+          </tr> --> 
+     
+      </tbody>
+    </table>
+  
+{% endblock %}
